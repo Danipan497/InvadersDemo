@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace InvadersDemo
 {
-    internal class Direction
+    public enum Direction
     {
+        Up,
+        Down,
+        Left,
+        Right
     }
 }

@@ -12,34 +12,58 @@ namespace InvadersDemo
 {
     public partial class Form1 : Form
     {
+        private Game game;
+        private Random random;
+        List<Keys> keysPressed = new List<Keys>();
         public Form1()
         {
             InitializeComponent();
+            game = new Game();
+            random = new Random();
         }
 
         private void animationTimer_Tick(object sender, EventArgs e)
         {
-
+            Invalidate();
         }
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
-
+            foreach(Keys key in keysPressed)
+            {
+                if (key == Keys.Left)
+                {
+                    game.MovePlayer(Direction.Left);
+                    return;
+                }
+                else if ( key == Keys.Right)
+                {
+                    game.MovePlayer(Direction.Right);
+                    return;
+                }
+            }
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-
+            Graphics g = e.Graphics;
+            g.FillRectangle(Brushes.Black, 0, 0, Width, Height);
+            game.Draw(g);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Q)
+                Application.Exit();
+            if (keysPressed.Contains(e.KeyCode))
+                keysPressed.Remove(e.KeyCode);
+            keysPressed.Add(e.KeyCode);
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-
+            if (keysPressed.Contains(e.KeyCode))
+                keysPressed.Remove(e.KeyCode);
         }
     }
 }
