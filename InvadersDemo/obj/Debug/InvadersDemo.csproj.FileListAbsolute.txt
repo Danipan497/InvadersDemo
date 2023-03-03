@@ -1,0 +1,11 @@
+C:\Users\Daniel\source\repos\InvadersDemo\InvadersDemo\bin\Debug\InvadersDemo.exe.config
+C:\Users\Daniel\source\repos\InvadersDemo\InvadersDemo\bin\Debug\InvadersDemo.exe
+C:\Users\Daniel\source\repos\InvadersDemo\InvadersDemo\bin\Debug\InvadersDemo.pdb
+C:\Users\Daniel\source\repos\InvadersDemo\InvadersDemo\obj\Debug\InvadersDemo.csproj.AssemblyReference.cache
+C:\Users\Daniel\source\repos\InvadersDemo\InvadersDemo\obj\Debug\InvadersDemo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Daniel\source\repos\InvadersDemo\InvadersDemo\obj\Debug\InvadersDemo.Form1.resources
+C:\Users\Daniel\source\repos\InvadersDemo\InvadersDemo\obj\Debug\InvadersDemo.Properties.Resources.resources
+C:\Users\Daniel\source\repos\InvadersDemo\InvadersDemo\obj\Debug\InvadersDemo.csproj.GenerateResource.cache
+C:\Users\Daniel\source\repos\InvadersDemo\InvadersDemo\obj\Debug\InvadersDemo.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\source\repos\InvadersDemo\InvadersDemo\obj\Debug\InvadersDemo.exe
+C:\Users\Daniel\source\repos\InvadersDemo\InvadersDemo\obj\Debug\InvadersDemo.pdb
