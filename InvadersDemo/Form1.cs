@@ -19,6 +19,7 @@ namespace InvadersDemo
         {
             InitializeComponent();
             game = new Game();
+            game.setClientRectangle(ClientRectangle);
             random = new Random();
         }
 
@@ -29,6 +30,7 @@ namespace InvadersDemo
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
+            game.Go(random);
             foreach(Keys key in keysPressed)
             {
                 if (key == Keys.Left)
@@ -55,6 +57,8 @@ namespace InvadersDemo
         {
             if (e.KeyCode == Keys.Q)
                 Application.Exit();
+            if (e.KeyCode == Keys.Space)
+                game.FireShot();
             if (keysPressed.Contains(e.KeyCode))
                 keysPressed.Remove(e.KeyCode);
             keysPressed.Add(e.KeyCode);
