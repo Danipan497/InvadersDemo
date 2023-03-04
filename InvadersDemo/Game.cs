@@ -134,7 +134,7 @@ namespace InvadersDemo
             InvaderType type = InvaderType.Bug + wave;
             for (int y = 50; y < 250; y += 80) 
             {
-                for (int x = 50; x < 600; x += 80)
+                for (int x = 50; x < 1300; x += 80)
                 {
                     invaders.Add(new Invader(type, new Point(x, y)));
                 }
