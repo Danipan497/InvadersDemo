@@ -76,8 +76,8 @@ namespace InvadersDemo
                 g.DrawImageUnscaled(Properties.Resources.player, new Point(x, ClientRectangle.Bottom - Properties.Resources.player.Height - 5));
                 x -= Properties.Resources.player.Width + 10;
             }
-            using (Font scoreFont = new Font(FontFamily.GenericSerif, 14, FontStyle.Regular))
-                g.DrawString(score.ToString(), scoreFont, Brushes.White, 10, 10);
+            using (Font scoreFont = new Font(FontFamily.GenericSerif, 16, FontStyle.Regular))
+                g.DrawString("Score  " + score.ToString(), scoreFont, Brushes.White, 10, 10);
         }
 
         private void UpdateShots()
