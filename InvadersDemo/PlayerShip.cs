@@ -16,7 +16,7 @@ namespace InvadersDemo
 
         public PlayerShip()
         {
-            Location = new Point(625, 750);
+            Location = new Point(625, 700);
         }
 
         public void Draw(Graphics g)

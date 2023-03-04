@@ -27,6 +27,9 @@ namespace InvadersDemo
 
         private void animationTimer_Tick(object sender, EventArgs e)
         {
+            animationCell++;
+            if (animationCell >= 6)
+                animationCell = 0;
             Invalidate();
         }
 
