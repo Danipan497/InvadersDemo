@@ -19,8 +19,17 @@ namespace InvadersDemo
         private List<Shot> enemyShots = new List<Shot>();
         private int playerShotsTaken;
 
+        private Direction invaderDirection = Direction.Right;
+        private Direction directionInvadersJustMoveIn = Direction.Right;
+        private const int invaderMargin = 10;
+        private List<Invader> invaders = new List<Invader>();
+        public List<Invader> Invaders { get {  return invaders; } }
+
+        public Boolean GameOver { get; private set; }
+
         public void Go(Random random)
         {
+            MoveInvaders();
             UpdateShots();
         }
         public void setClientRectangle(Rectangle clientRectangle)

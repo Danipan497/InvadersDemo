@@ -54,6 +54,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Game.cs" />
+    <Compile Include="Invader.cs" />
+    <Compile Include="InvaderType.cs" />
     <Compile Include="PlayerShip.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
