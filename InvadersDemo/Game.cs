@@ -13,6 +13,7 @@ namespace InvadersDemo
         private int wave = 0;
         private int framesSkipped = 5;
         private int currentFrame = 0;
+        private int score;
         private DateTime waveStarted;
 
         private Random random = new Random();
@@ -31,6 +32,12 @@ namespace InvadersDemo
         private const int invaderMargin = 10;
         private List<Invader> invaders = new List<Invader>();
         public List<Invader> Invaders { get {  return invaders; } }
+
+        public int Score
+        {
+            get { return score; }
+            set { score = value; }
+        }
 
         public Boolean GameOver { get; private set; }
 
@@ -63,6 +70,14 @@ namespace InvadersDemo
                 shot.Draw(g);
             foreach (Shot shot in enemyShots)
                 shot.Draw(g);
+            int x = ClientRectangle.X + ClientRectangle.Width - Properties.Resources.player.Width - 20;
+            for (int i = livesLeft; i > 0; i--)
+            {
+                g.DrawImageUnscaled(Properties.Resources.player, new Point(x, ClientRectangle.Bottom - Properties.Resources.player.Height - 5));
+                x -= Properties.Resources.player.Width + 10;
+            }
+            using (Font scoreFont = new Font(FontFamily.GenericSerif, 14, FontStyle.Regular))
+                g.DrawString(score.ToString(), scoreFont, Brushes.White, 10, 10);
         }
 
         private void UpdateShots()
@@ -148,6 +163,7 @@ namespace InvadersDemo
             }
             foreach (Invader invader in deadInvaders)
             {
+                Score += invader.Score;
                 invaders.Remove(invader);
             }
             foreach (Shot shot in usedShots)
@@ -222,6 +238,11 @@ namespace InvadersDemo
             else
                 enemyShots.Add(new Shot(new Point(chosenInvader.Location.X + (int)(chosenInvader.Hitbox.Width / 2),
                     chosenInvader.Location.Y + chosenInvader.Hitbox.Height), Direction.Down));
+        }
+
+        public void AddScore(int value)
+        {
+            Score += value;
         }
 
         private void OnGameOver()

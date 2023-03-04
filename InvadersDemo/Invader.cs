@@ -13,6 +13,7 @@ namespace InvadersDemo
         public InvaderType Type { get; private set; }
         private Size hitboxSize;
         public Rectangle Hitbox { get { return new Rectangle(Location, hitboxSize); } }
+        public int Score {  get {  return ((int)Type * 10) + 10; } }
 
         public Invader(InvaderType type, Point location)
         {
