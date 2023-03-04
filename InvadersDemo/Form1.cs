@@ -14,6 +14,7 @@ namespace InvadersDemo
     {
         private Game game;
         private Random random;
+        private Stars stars;
         List<Keys> keysPressed = new List<Keys>();
 
         private int animationCell;
@@ -23,10 +24,12 @@ namespace InvadersDemo
             game = new Game();
             game.setClientRectangle(ClientRectangle);
             random = new Random();
+            stars = new Stars(ClientRectangle);
         }
 
         private void animationTimer_Tick(object sender, EventArgs e)
         {
+            stars.Twinkle(random);
             animationCell++;
             if (animationCell >= 6)
                 animationCell = 0;
@@ -56,6 +59,7 @@ namespace InvadersDemo
             Graphics g = e.Graphics;
             g.FillRectangle(Brushes.Black, 0, 0, Width, Height);
             game.Draw(g, animationCell);
+            stars.Draw(g);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
