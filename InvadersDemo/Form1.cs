@@ -15,6 +15,8 @@ namespace InvadersDemo
         private Game game;
         private Random random;
         List<Keys> keysPressed = new List<Keys>();
+
+        private int animationCell;
         public Form1()
         {
             InitializeComponent();
@@ -50,7 +52,7 @@ namespace InvadersDemo
         {
             Graphics g = e.Graphics;
             g.FillRectangle(Brushes.Black, 0, 0, Width, Height);
-            game.Draw(g);
+            game.Draw(g, animationCell);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
