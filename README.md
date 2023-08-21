@@ -1,2 +1,2 @@
 # InvadersDemo
- Space invaders demo. C# Head First Lab
+ Space invaders demo. Head First C# Lab project.
